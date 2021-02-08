@@ -56,7 +56,7 @@ void mess_server::server_init( Kalibrierung& kalibrierung, kali_dat& dat){
       request->send_P(200, "text/plain", "Online");
     });
   server.on("/Kali_nass", HTTP_GET, [](AsyncWebServerRequest *request){
-      dat = kalibrierung.laden(kalibrierung, dat);
+      dat = kalibrierung.laden();
       dat.nass=dat.trocken-analogRead(A0);
       Serial.print("dat.nass nach rechnung: )");
       Serial.println(dat.nass);
