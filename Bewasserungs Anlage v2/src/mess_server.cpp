@@ -72,7 +72,7 @@ void mess_server::server_init( Kalibrierung& kalibrierung, kali_dat& dat){
       Serial.println("Trocken gespeichert auf abrfage");
     });
   server.on("/abfrage", HTTP_GET, [](AsyncWebServerRequest *request){
-      int help=this->berechnung_proz(kalibrierung, dat);
+      int help=berechnung_proz(kalibrierung, dat);
       
       //I know its not clean but for now its working
       switch (help){
